@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      html {
+        font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-size: 1.15rem;
+        line-height: 1.5;
+      }
+
+      button, select {
+        border: 1px solid lightgrey;
+        font-size: inherit;
+        padding: 0.3rem;
+        font-family: inherit;
+        border-radius: 5px;
+      }
+
+      button:hover, select:hover {
+        border-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Selecione um calendário padrão para sincronização.</p>
+
+    <? const calendars = CalendarApp.getAllOwnedCalendars().map(calendar => ({'id': calendar.getId(), 'name': calendar.getName()})) ?>
+    <p><label for="calendario">Calendário</label>
+    <select id="calendario" required>
+      <? for (const calendar of calendars) { ?>
+      <option value="<?= calendar.id ?>"><?= calendar.name ?></option>
+      <? } ?>
+    </select></p>
+
+    <p><button onclick="salvar()">Salvar</button> <button onclick="google.script.host.close()">Fechar</button></p>
+
+    <script>
+      function salvar () {
+        const id = document.getElementById('calendario').value
+        google.script.run
+          .withSuccessHandler(google.script.host.close())
+          .withFailureHandler(google.script.host.close())
+          .saveCalendar(id)
+      }
+    </script>
+  </body>
+</html>
