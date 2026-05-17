@@ -31,7 +31,7 @@
 
 "use strict";
 
-const VERSION = ''
+const VERSION = 'v0.1.0'
 const TODAY = new Date()
 
 function isInstalled () {
