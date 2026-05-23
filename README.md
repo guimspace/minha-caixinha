@@ -12,8 +12,16 @@ Given the ["Renda recorde e desemprego baixo: por que o brasileiro segue endivid
 
 ## Setup
 
-### Create a container-bound project from Google Sheets
-1. Open a Sheets spreadsheet.
+### Get the template
+Copy or download the spreadsheet template from one of these sources:
+- Copy from [Google Drive](https://drive.google.com/file/d/1dJg7bVFnOHgztIQ4FDLENwwUGWmKRJII/view).
+- Copy [Minha_Caixinha-v0.1.0.ods](templates/Minha_Caixinha-v0.1.0.ods) file.
+- Download from [Internet Archive](https://archive.org/download/minhacaixinha.org-v0.1.0).
+
+Import the template to your Google Drive. For ODS format, open it with Google Sheets.
+
+### Create a container-bound project
+1. Open the template in Google Sheets.
 1. Click **Extensions** > **Apps Script**.
 1. In the script editor, rename the project.
 1. Copy and paste the contents of `src/main.js` and `src/index.html`.
