@@ -117,6 +117,10 @@ function initialConfig_ () {
       calendar_year: calendar_year,
       default_calendar: CalendarApp.getDefaultCalendar().getId(),
     })
+
+  SpreadsheetApp.getActiveSpreadsheet().setSpreadsheetLocale('pt_BR')
+  SpreadsheetApp.flush()
+
   // Initializes spreadsheet layouts, formulas, balances, and protections
   new SheetCashFlow().resetWeekendColoring()
     .resetFormulas()
