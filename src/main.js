@@ -126,6 +126,7 @@ function initialConfig_ () {
     .resetFormulas()
     .resetBalanceReference()
     .resetProtection()
+    .appendCalendarYear()
   SpreadsheetApp.flush()
 
   documentProperties.setProperty('is_installed', 'true')
@@ -288,6 +289,10 @@ class SheetCashFlow {
 
   get specs () {
     return this._specs
+  }
+
+  appendCalendarYear () {
+    this.sheet.getRange('B1').setValue(`Janeiro ${this._calendar_year}`)
   }
 
   removeProtection () {
