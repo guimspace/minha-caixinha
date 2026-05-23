@@ -71,7 +71,7 @@ function onOpen (e) {
   const is_current = isCurrentCalendarYear()
   if (is_current) {
     menu.addItem('Sincronizar calendário', 'toolSyncCalendar_')
-      .addItem('Selecionar calendário padrão', 'showDialogConfigure_')
+      .addItem('Definir calendário padrão', 'showDialogConfigure_')
       .addSeparator()
   }
 
@@ -81,7 +81,7 @@ function onOpen (e) {
 function showDialogConfigure_ () {
   // Show a modeless dialog using an external HTML template
   const htmlOutput = HtmlService.createTemplateFromFile('index').evaluate()
-  SpreadsheetApp.getUi().showModelessDialog(htmlOutput, 'Selecionar calendário padrão')
+  SpreadsheetApp.getUi().showModelessDialog(htmlOutput, 'Definir calendário padrão')
 }
 
 function saveCalendar (calendar_id) {
@@ -108,7 +108,7 @@ function initialConfig_ () {
   const year = Number(calendar_year)
   // Validate user input to ensure it falls within a realistic bound
   if (!Number.isInteger(year) || year < yyyy || year > 2199) {
-    ui.alert(`Ano inválido. Por favor, insira um número inteiro a partir de ${yyyy}.`)
+    ui.alert(`Ano inválido. Por favor, insira um número inteiro maior ou igual a ${yyyy}.`)
     return
   }
 

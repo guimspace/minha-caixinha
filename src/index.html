@@ -27,7 +27,7 @@
     </style>
   </head>
   <body>
-    <p>Selecione um calendário padrão para sincronização.</p>
+    <p>Defina um calendário padrão para a sincronização.</p>
 
     <? const calendars = CalendarApp.getAllOwnedCalendars().map(calendar => ({'id': calendar.getId(), 'name': calendar.getName()})) ?>
     <p><label for="calendario">Calendário</label>
